@@ -1,0 +1,43 @@
+.All{
+    background-color: rgb(252, 250, 248);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.Login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(237, 107, 8);
+    color: antiquewhite;
+    width: 50%;
+    height: 100vh;
+
+}
+.Img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://assets-blog.pagseguro.uol.com.br/wp-content/2022/05/economizar-no-mercado-min.jpg');
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+
+}
+.Logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(87, 38, 2, 0.601);
+    color: aliceblue;
+    height: 200px;
+    width: 350px;
+    border-radius: 5px;
+}
+.LoginCadastro{
+    display:flex;
+    margin-top: 10px !important;
+    justify-content:space-around;
+}
