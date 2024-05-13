@@ -1,6 +1,8 @@
 import { Button} from 'bootstrap';
 import { useState } from 'react';
-import './login.css';
+import '../estilos/login.css';
+import logo from './img/logoSrZe.png'
+import logo2 from './img/logoSrZe2.png'
 
 function Login() {
     const [email, setEmail] = useState("")
@@ -28,11 +30,11 @@ function Login() {
             <div className='Formulario'>
                 <div class="mb-3 row">
                     <h1 className='display-2'>Login:</h1>
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
                     <input onChange={handleChangeEmail} type="text" class="form-control"></input>
                 </div>
                 <div class="mb-3 row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Senha:</label>
                         <input onChange={handleChangeSenha} type="password" class="form-control" id="inputPassword"></input>
                         <div className='LoginCadastro'>
                             <button style={{color:'white'}} type="button" class="btn btn-warning">Cadastrar</button>
@@ -42,11 +44,7 @@ function Login() {
             </div>
         </div>
         <div className='Img'>
-            <div className='Logo'>
-                <h3>Mercado</h3>
-                <h3>do</h3>
-                <h1>Senhor Zé</h1>
-            </div>
+            <img id='logo' src={logo2} />
         </div>
     </div>
   );
