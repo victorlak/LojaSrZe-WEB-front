@@ -1,3 +1,6 @@
+.all{
+    background-color: rgb(246, 227, 203);
+}
 .Nav{
     background-color:rgb(237, 107, 8);
     height: 53px;
@@ -23,4 +26,14 @@
 }
 .btn-nav{
     height:50%
+}
+.oferta{
+    background-color: rgb(237, 107, 8);
+    display: flex;
+    justify-content: center;
+    color: antiquewhite;
+}
+
+.cards{
+    display: flex;
 }
