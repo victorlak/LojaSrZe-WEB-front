@@ -3,6 +3,7 @@ import { useState } from 'react';
 import '../estilos/login.css';
 import logo from './img/logoSrZe.png'
 import logo2 from './img/logoSrZe2.png'
+import Usuarios from '../FakeDatabase/Usuarios'
 
 function Login() {
     const [email, setEmail] = useState("")
@@ -14,13 +15,21 @@ function Login() {
     const handleChangeSenha= (e) => {
         setSenha(e.target.value)
     }
-    function criarObjeto(){
+   async function criarObjeto(){
         const login = {
-            Email: email,
-            Senha: senha
+            email: email,
+            senha: senha
         }
-        console.log(login);
-        return login
+       const response = await Usuarios.Login(login)
+      
+       if (response.status === 200) {
+        console.log(response.data);
+           alert('Login efetuado com sucesso')
+           
+       }else {
+              alert('Usuário não encontrado')
+       }
+        
     }
 
 

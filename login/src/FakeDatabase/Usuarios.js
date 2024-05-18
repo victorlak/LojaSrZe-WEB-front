@@ -1,4 +1,4 @@
-import {Usuarios} from './Usuarios.js';
+import Usuarios from './Database/Usuarios';
 
 async function Login({email, senha}){
     const usuario = Usuarios.find(usuario => usuario.email === email && usuario.senha === senha);
