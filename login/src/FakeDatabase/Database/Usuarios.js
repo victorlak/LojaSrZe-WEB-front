@@ -63,7 +63,14 @@ const usuarios = [
     {
         
         id: 4,
-        carrinho: [],
+        carrinho: [
+            {
+                id: 1,
+                nome: "Coca-Cola",
+                preco: 5.00,
+                categoria: "BEBIDAS"
+            }
+        ],
         avatar:"",
         email: 'AnaPereira@gmail.com',
         senha: "Ana123456",
