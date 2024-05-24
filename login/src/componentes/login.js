@@ -4,10 +4,13 @@ import '../estilos/login.css';
 import logo from './img/logoSrZe.png'
 import logo2 from './img/logoSrZe2.png'
 import Usuarios from '../FakeDatabase/Usuarios'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
+    
 
     const handleChangeEmail= (e) => {
         setEmail(e.target.value)
@@ -46,14 +49,14 @@ function Login() {
                     <label for="inputPassword" class="col-sm-2 col-form-label">Senha:</label>
                         <input onChange={handleChangeSenha} type="password" class="form-control" id="inputPassword"></input>
                         <div className='LoginCadastro'>
-                            <button style={{color:'white'}} type="button" class="btn btn-warning">Cadastrar</button>
+                            <button style={{color:'white'}} onClick={() => navigate('/cadastro')} type="button" class="btn btn-warning">Cadastrar</button>
                             <button onClick={criarObjeto} style={{color:'white'}} type="button" class="btn btn-warning">Entrar</button>
                         </div>
                 </div>
             </div>
         </div>
         <div className='Img'>
-            <img id='logo' src={logo2} />
+            <img className='img-fluid hover-zoom' id='logo'onClick={() => navigate('/')} src={logo2} />
         </div>
     </div>
   );
