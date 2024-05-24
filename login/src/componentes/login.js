@@ -40,7 +40,7 @@ function Login() {
                     <label for="inputPassword" class="col-sm-2 col-form-label">Senha:</label>
                         <input onChange={handleChangeSenha} type="password" class="form-control" id="inputPassword"></input>
                         <div className='LoginCadastro'>
-                            <button style={{color:'white'}} type="button" class="btn btn-warning">Cadastrar</button>
+                            <button style={{color:'white'}} onClick={() => navigate('/cadastro')} type="button" class="btn btn-warning">Cadastrar</button>
                             <button onClick={criarObjeto} style={{color:'white'}} type="button" class="btn btn-warning">Entrar</button>
                         </div>
                 </div>
