@@ -3,10 +3,13 @@ import { useState } from 'react';
 import '../estilos/login.css';
 import logo from './img/logoSrZe.png'
 import logo2 from './img/logoSrZe2.png'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
+    
 
     const handleChangeEmail= (e) => {
         setEmail(e.target.value)
@@ -44,7 +47,7 @@ function Login() {
             </div>
         </div>
         <div className='Img'>
-            <img id='logo' src={logo2} />
+            <img className='img-fluid hover-zoom' id='logo'onClick={() => navigate('/')} src={logo2} />
         </div>
     </div>
   );
