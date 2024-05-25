@@ -1,17 +1,23 @@
 
-import React from 'react';
-import card from './img/cardsSrZé.jpg'
-import logo from './img/logoSrZe2.png'
-import logoPerfil from './img/logoPerfil.png'
-import logoBaner from './img/banerSrZé.jpg'
+import React, { useEffect, useState } from 'react';
+import card from '../../componentes/img/cardsSrZé.jpg'
+import logo from '../../componentes/img/logoSrZe2.png'
+import logoPerfil from '../../componentes/img/logoPerfil.png'
+import logoBaner from '../../componentes/img/banerSrZé.jpg'
 import { Container, Row, Col, Button } from 'reactstrap';
-import '../estilos/home.css';
+import './home.css';
 import { useNavigate } from 'react-router-dom';
+import Storage from '../../Helpers/Storage';
 
 
 
 function Home() {
   const navigate = useNavigate()
+
+  const [user, setUser] = useState({})
+  useEffect(()=>{
+    setUser(Storage.Get("user"))
+  },[])
   return (
     <div className='all'>
       <Container fluid className="Nav">

@@ -9,9 +9,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './componentes/home';
-import Login from './componentes/login';
-import Cadastro from './componentes/cadastro';
+import Home from './Pages/Home/home';
+import Login from './Pages/Login/login';
+import Cadastro from './Pages/Cadastro/cadastro';
 
 const router = createBrowserRouter([
   {
