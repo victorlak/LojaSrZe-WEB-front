@@ -8,41 +8,60 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import './home.css';
 import { useNavigate } from 'react-router-dom';
 import Storage from '../../Helpers/Storage';
+import Example from './Drop';
+
+
 
 
 
 function Home() {
   const navigate = useNavigate()
+  
 
   const [user, setUser] = useState({})
   useEffect(()=>{
     setUser(Storage.Get("user"))
   },[])
+  
   return (
     <div className='all'>
       <Container fluid className="Nav">
         <div className='cadastroLogin'>
           <img id='Logo'  src={logo} />
           <input type="text" className="mx-3 form-control form-control-sm" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="button-addon2" />
-          <button style={{color:'white'}} type="button" class="btn btn-warning btn-nav rounded-1">Pesquisar</button>
-          <img id='LogoPerfil'className='mx-2' src={logoPerfil} />
-          <button style={{color:'white'}} type="button" onClick={() => navigate('/login')} class="btn btn-sm btn-warning btn-nav rounded-1">Cadastrar/Entrar</button>
+          <button style={{color:'white'}} type="button" class="btn btn-warning rounded-1">Pesquisar</button>
+          {
+            user.avatar == "" ?
+            <img id='LogoPerfil'className='mx-2' src={logoPerfil} /> 
+            :
+            <img id='LogoPerfil'className='mx-2 rounded-circle' src={user.avatar} />
+          }
+          {
+            user == {} ? 
+            <button style={{color:'white'}} type="button" onClick={() => navigate('/login')} class="btn btn-sm btn-warning btn-nav rounded-1">Cadastrar/Entrar</button> 
+            :
+            null
+          }
+          
           
         </div>
           <Row>
             <Col>
-            <button style={{color:'white'}} type="button" class="btn btn-warning  rounded-1">Eletrônicos</button>
+            <button style={{color:'white'}} type="button" class="btn btn-warning btn-nav  rounded-1">Eletrônicos</button>
             </Col>
             <Col>
-            <button style={{color:'white'}} type="button" class="btn btn-warning  rounded-1">Mercado</button>
+            <button style={{color:'white'}} type="button" class="btn btn-warning btn-nav  rounded-1">Mercado</button>
             </Col>
             <Col>
-            <button style={{color:'white'}} type="button" class="btn btn-warning rounded-1">Móveis</button>
+            <button style={{color:'white'}} type="button" class="btn btn-warning btn-nav rounded-1">Móveis</button>
             </Col>
             <Col>
-            <button style={{color:'white'}} type="button" class="btn btn-warning  rounded-1">Serviços</button>
+            <button style={{color:'white'}} type="button" class="btn btn-warning btn-nav  rounded-1">Serviços</button>
             </Col>
           </Row>
+          <Example style={{ display: 'none'}} className="drop" direction="down" />
+          
+          
       </Container>
       <div id="carouselExampleAutoplaying" class="carousel slide mt-5" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -126,5 +145,6 @@ function Home() {
     </div>
   );
 }
+
 
 export default Home;
