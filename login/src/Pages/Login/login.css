@@ -19,8 +19,6 @@
     color: antiquewhite;
     width: 50%;
     height: 100vh;
-    
-
 }
 .Img{
     
@@ -35,4 +33,11 @@
     display:flex;
     margin-top: 10px !important;
     justify-content:space-around;
+}
+
+@media(max-width :930px) {
+    .Login{
+        background-color: brown;
+        display:block
+    }
 }

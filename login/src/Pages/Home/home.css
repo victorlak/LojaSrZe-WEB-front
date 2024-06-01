@@ -24,16 +24,23 @@
 #LogoPerfil{
     height: 40px;;
 }
-.btn-nav{
-    height:50%
-}
 .oferta{
     background-color: rgb(237, 107, 8);
     display: flex;
     justify-content: center;
     color: antiquewhite;
 }
-
 .cards{
     display: flex;
 }
+
+@media screen and (max-width: 980px) {
+    .btn-nav {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 979px) {
+    .drop {
+      display: none;
+    }
+  }

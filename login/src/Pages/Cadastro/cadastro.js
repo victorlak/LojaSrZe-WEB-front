@@ -1,5 +1,5 @@
 import { Container } from 'reactstrap'
-import '../estilos/cadastro.css'
+import './cadastro.css'
 
 function Cadastro(){
 
