@@ -30,17 +30,26 @@
     justify-content: center;
     color: antiquewhite;
 }
+
 .cards{
     display: flex;
 }
+.drop{
+    display: none;
+}
 
-@media screen and (max-width: 980px) {
-    .btn-nav {
-      display: none;
+@media screen and (max-width: 970px) {
+    .drop{
+        display: block;
+    }
+    .cadastroLogin{
+        justify-content: flex-start;
+    }
+    .btn-nav{
+        display: none;
+    }
+    .hide-mobile{
+        display: none;
     }
   }
-  @media screen and (max-width: 979px) {
-    .drop {
-      display: none;
-    }
-  }
+  

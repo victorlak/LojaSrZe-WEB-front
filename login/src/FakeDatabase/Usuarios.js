@@ -1,7 +1,9 @@
-import Usuarios from './Database/Usuarios';
+import pegarTodosUsuarios from '../Api/Users';
 
 async function Login({email, senha}){
-    const usuario = Usuarios.find(usuario => usuario.email === email && usuario.senha === senha);
+    let response = await pegarTodosUsuarios()
+    let allUsers = response.data
+    const usuario = allUsers.find(usuario => usuario.email === email && usuario.password === senha);
     if(usuario){
         return {
             status: 200,

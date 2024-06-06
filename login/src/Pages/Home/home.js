@@ -9,6 +9,7 @@ import './home.css';
 import { useNavigate } from 'react-router-dom';
 import Storage from '../../Helpers/Storage';
 import Example from './Drop';
+import RequestProduto from '../../Api/Produtos';
 
 
 
@@ -17,19 +18,33 @@ import Example from './Drop';
 function Home() {
   const navigate = useNavigate()
   
-
+  const [produtos, setProdutos] = useState([])
   const [user, setUser] = useState({})
+
+
+
   useEffect(()=>{
     setUser(Storage.Get("user"))
+    async function featData(){
+      let produtos = await RequestProduto.pegarTodosProdutos()
+      setProdutos(produtos.data)
+      console.log(produtos);
+    }
+    featData()
   },[])
   
+  if(produtos.length == 0){
+    return(
+      <h1>Carregando</h1>
+    )
+  }
   return (
     <div className='all'>
       <Container fluid className="Nav">
         <div className='cadastroLogin'>
-          <img id='Logo'  src={logo} />
-          <input type="text" className="mx-3 form-control form-control-sm" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="button-addon2" />
-          <button style={{color:'white'}} type="button" class="btn btn-warning rounded-1">Pesquisar</button>
+          <img id='Logo' className='hide-mobile'  src={logo} />
+          <input type="text" className="mx-3 form-control form-control-sm hide-mobile" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="button-addon2" />
+          <button style={{color:'white'}} type="button" class="btn btn-warning rounded-1 hide-mobile">Pesquisar</button>
           {
             user.avatar == "" ?
             <img id='LogoPerfil'className='mx-2' src={logoPerfil} /> 
@@ -59,7 +74,7 @@ function Home() {
             <button style={{color:'white'}} type="button" class="btn btn-warning btn-nav  rounded-1">Serviços</button>
             </Col>
           </Row>
-          <Example style={{ display: 'none'}} className="drop" direction="down" />
+          <Example  direction="down" />
           
           
       </Container>
